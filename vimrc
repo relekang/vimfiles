@@ -14,6 +14,13 @@ filetype plugin on
 "Load bashrc to !
 set shellcmdflag=-ic
 
+"Search
+set hlsearch  "Highlight
+set incsearch "Incremental
+set ignorecase
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR> " Press Space to dismiss highlighting
+
+
 "Solarized
 let g:solarized_termcolors=256
 set background=dark
