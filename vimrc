@@ -28,3 +28,9 @@ let g:nerdtree_tabs_open_on_console_startup=1
 let NERDTreeIgnore=['\.vim$', '\~$', '.*\.egg-info', '.*\.pyc$', '.*\project.db$']
 
 au vimenter,BufRead,BufNewFile *.pp              set filetype=puppet
+
+" Binds moving of lines to 'Shift + [j/k]'
+nnoremap J :m .+1<CR>==
+nnoremap K :m .-2<CR>==
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
