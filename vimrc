@@ -37,7 +37,9 @@ let g:syntastic_javascript_jslint_conf=""
 let g:nerdtree_tabs_open_on_console_startup=1
 let NERDTreeIgnore=['\.vim$', '\~$', '.*\.egg-info', '.*\.pyc$', '.*\project.db$']
 
-au vimenter,BufRead,BufNewFile *.pp              set filetype=puppet
+" File types
+au BufRead,BufNewFile *.pp set ft=puppet
+au BufRead,BufNewFile {Rakefile,Gemfile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 
 " Binds moving of lines to 'Shift + [j/k]'
 nnoremap J :m .+1<CR>==
