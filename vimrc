@@ -8,6 +8,8 @@ syntax enable
 set autoindent
 set expandtab
 
+filetype plugin on
+
 "Load bashrc to !
 set shellcmdflag=-ic
 
