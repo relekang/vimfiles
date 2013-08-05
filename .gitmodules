@@ -25,3 +25,6 @@
 [submodule "vim/bundle/cucumber"]
 	path = vim/bundle/cucumber
 	url = git@github.com:tpope/vim-cucumber.git
+[submodule "vim/bundle/airline"]
+	path = vim/bundle/airline
+	url = git@github.com:bling/vim-airline.git
