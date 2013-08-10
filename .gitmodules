@@ -28,3 +28,9 @@
 [submodule "vim/bundle/airline"]
 	path = vim/bundle/airline
 	url = git@github.com:bling/vim-airline.git
+[submodule "vim/bundle/puppet"]
+	path = vim/bundle/puppet
+	url = git@github.com:rodjek/vim-puppet.git
+[submodule "vim/bundle/jinja2"]
+	path = vim/bundle/jinja2
+	url = git@github.com:Glench/Vim-Jinja2-Syntax.git
