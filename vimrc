@@ -42,6 +42,10 @@ map + <plug>NERDTreeTabsToggle<CR>
 au BufRead,BufNewFile *.pp set ft=puppet
 au BufRead,BufNewFile {Rakefile,Gemfile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 au BufReadPost,BufNewFile *.coffee setl shiftwidth=2 expandtab
+au BufRead,BufNewFile *.tex set spell
+au BufRead,BufNewFile *.tex set wrap lbr
+au BufRead,BufNewFile *.tex let g:syntastic_auto_loc_list=0
+au BufWritePost *.tex silent !pdflatex % > /dev/null && open %:r.pdf
 
 " Binds moving of lines to 'Shift + [j/k]'
 nnoremap J :m .+1<CR>==
