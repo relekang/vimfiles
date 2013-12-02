@@ -3,6 +3,7 @@ call pathogen#infect()
 set t_Co=256
 set cc=100
 set encoding=utf-8
+set spell
 set number
 set laststatus=2 " always show the status line
 syntax enable
