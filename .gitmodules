@@ -49,3 +49,6 @@
 [submodule "vim/bundle/vim-arduino"]
 	path = vim/bundle/vim-arduino
 	url = git@github.com:kingbin/vim-arduino.git
+[submodule "vim/bundle/editorconfig"]
+	path = vim/bundle/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim.git
