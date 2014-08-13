@@ -49,3 +49,9 @@
 [submodule "vim/bundle/vim-arduino"]
 	path = vim/bundle/vim-arduino
 	url = git@github.com:kingbin/vim-arduino.git
+[submodule "vim/bundle/baileyjs"]
+	path = vim/bundle/baileyjs
+	url = git@github.com:relekang/vim-baileyjs.git
+[submodule "vim/bundle/jade"]
+	path = vim/bundle/jade
+	url = https://github.com/digitaltoad/vim-jade.git
