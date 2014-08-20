@@ -61,3 +61,6 @@
 [submodule "vim/bundle/editorconfig"]
 	path = vim/bundle/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "vim/bundle/marked"]
+	path = vim/bundle/marked
+	url = git@github.com:itspriddle/vim-marked.git
