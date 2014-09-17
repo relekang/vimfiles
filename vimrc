@@ -39,7 +39,7 @@ let g:syntastic_javascript_checkers = ['jshint']
 
 " NERDTree
 let g:nerdtree_tabs_open_on_console_startup=1
-let NERDTreeIgnore=['\.vim$', '\~$', '.*\.egg-info', '.*\.pyc$', '.*\project.db$', '.*\.aux','.*\.log', '.*\.synctex\.gz']
+let NERDTreeIgnore=[ '\.vim$', '\~$', '.*\.egg-info', '.*\.pyc$', '.*\project.db$', '.*\.aux', '.*\.log', '.*\.lof', '.*\.lot', '.*\.toc', '.*\.synctex\.gz' ]
 map + <plug>NERDTreeTabsToggle<CR>
 
 " File types
