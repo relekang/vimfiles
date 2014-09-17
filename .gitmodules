@@ -64,3 +64,6 @@
 [submodule "vim/bundle/marked"]
 	path = vim/bundle/marked
 	url = git@github.com:itspriddle/vim-marked.git
+[submodule "vim/bundle/peg"]
+	path = vim/bundle/peg
+	url = git@github.com:gf3/peg.vim.git
