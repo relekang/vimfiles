@@ -19,6 +19,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'scwood/vim-hybrid'
 Plugin 'jscappini/material.vim'
