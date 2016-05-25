@@ -50,6 +50,9 @@ set splitright
 
 filetype plugin indent on
 
+" Remove trailing spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 "Search
 set hlsearch  "Highlight
 set incsearch "Incremental
