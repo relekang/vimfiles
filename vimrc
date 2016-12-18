@@ -92,6 +92,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " Markdown
 let g:vim_markdown_fenced_languages = ['viml=vim', 'bash=sh', 'ini=dosini', 'javascript=js', 'es=jsx', 'python=py']
+let g:vim_markdown_folding_disabled = 1
 
 " jsx
 let g:jsx_ext_required = 0
