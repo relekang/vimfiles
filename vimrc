@@ -103,6 +103,10 @@ let g:jsx_ext_required = 0
 nnoremap j gj
 nnoremap k gk
 
+
+imap jj <Esc>
+cmap jj <Esc>
+
 " Use hjkl instead
 nnoremap <up> <nop>
 nnoremap <down> <nop>
