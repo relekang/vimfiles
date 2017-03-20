@@ -99,6 +99,8 @@ let g:vim_markdown_folding_disabled = 1
 " jsx
 let g:jsx_ext_required = 0
 
+autocmd FileType javascript set formatprg="prettier --stdin || true && eslint --fix --stdin"
+
 " Move up and down in screen lines, not file lines:
 nnoremap j gj
 nnoremap k gk
