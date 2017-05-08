@@ -22,12 +22,16 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'itspriddle/vim-marked'
 Plugin 'flowtype/vim-flow'
+Plugin 'NLKNguyen/papercolor-theme'
 
 Plugin 'scwood/vim-hybrid'
 Plugin 'jscappini/material.vim'
 
 call vundle#end()
 filetype plugin indent on
+
+" Weird first-line-bug in hyper
+set t_RV=
 
 set t_Co=256
 set cc=100
@@ -67,8 +71,15 @@ set ignorecase
 " Press Space to dismiss highlighting
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-set background=dark
-colorscheme hybrid
+"set background=dark
+"colorscheme hybrid
+colorscheme PaperColor
+
+if strftime("%H") < 6 || strftime("%H") > 20
+  set background=dark
+else
+  set background=light
+endif
 
 " NERDTree
 map + <plug>NERDTreeTabsToggle<CR>
