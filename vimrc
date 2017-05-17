@@ -23,6 +23,12 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'itspriddle/vim-marked'
 Plugin 'flowtype/vim-flow'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
+Plugin 'sbdchd/neoformat'
+Plugin 'elmcast/elm-vim'
 
 Plugin 'scwood/vim-hybrid'
 Plugin 'jscappini/material.vim'
@@ -35,6 +41,7 @@ set t_RV=
 
 set t_Co=256
 set cc=100
+set mouse=a
 set encoding=utf-8
 set number
 set cursorline
@@ -71,14 +78,12 @@ set ignorecase
 " Press Space to dismiss highlighting
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-"set background=dark
-"colorscheme hybrid
 colorscheme PaperColor
 
-if strftime("%H") < 6 || strftime("%H") > 20
-  set background=dark
-else
+if $VIM_BACKGROUND == "light"
   set background=light
+else
+  set background=dark
 endif
 
 " NERDTree
@@ -102,6 +107,7 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_less_checkers = ['lesshint']
 
 " Markdown
 let g:vim_markdown_fenced_languages = ['viml=vim', 'bash=sh', 'ini=dosini', 'javascript=js', 'es=jsx', 'python=py']
