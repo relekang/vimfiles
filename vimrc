@@ -29,6 +29,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer'
 Plugin 'sbdchd/neoformat'
 Plugin 'elmcast/elm-vim'
+Plugin 'reasonml/vim-reason'
 
 Plugin 'scwood/vim-hybrid'
 Plugin 'jscappini/material.vim'
