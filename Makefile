@@ -8,7 +8,10 @@ $(HOME)/.vimrc:
 	@ln -s $(shell pwd)/vimrc $(HOME)/.vimrc
 	@echo "Created symbolic link for .vimrc"
 
-$(HOME)/.config/nvim:
+$(HOME)/.config:
+	mkdir $(HOME)/.config
+
+$(HOME)/.config/nvim: $(HOME)/.config
 	@ln -s $(shell pwd)/nvim $(HOME)/.config/nvim
 	@echo "Created symbolic link for nvim"
 
