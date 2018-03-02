@@ -71,6 +71,9 @@ set ignorecase
 " Press Space to dismiss highlighting
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
+" Makefiles should have tabs
+autocmd filetype make setlocal noexpandtab
+
 colorscheme PaperColor
 
 if $VIM_BACKGROUND == "light"
