@@ -13,17 +13,26 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'vim-airline/vim-airline'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'w0rp/ale'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
+Plug 'sbdchd/neoformat'
 
-if has('nvim')
-  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'roxma/nvim-completion-manager'
-  Plug 'w0rp/ale'
-  Plug 'sbdchd/neoformat'
-  Plug 'wokalski/autocomplete-flow'
-  Plug 'Shougo/neosnippet'
-  Plug 'Shougo/neosnippet-snippets'
+if !has('nvim')
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
+
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-completion-manager'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'wokalski/autocomplete-flow'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 
 Plug 'plasticboy/vim-markdown'
 Plug 'reasonml/vim-reason'
@@ -99,6 +108,8 @@ let g:vim_markdown_folding_disabled = 1
 
 " jsx
 let g:jsx_ext_required = 0
+
+let g:ackprg = 'ag --vimgrep --smart-case'
 
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
