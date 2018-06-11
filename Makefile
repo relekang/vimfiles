@@ -16,11 +16,10 @@ $(HOME)/.config/nvim: $(HOME)/.config
 	@echo "Created symbolic link for nvim"
 
 vim_plugins:
+	pip3 install neovim typing python-language-server
+	npm i -g ocaml-language-server
 	@vim +PlugInstall +qa
 	@nvim +PlugInstall +qa
-	pip3 install neovim typing
-	pip install python-language-server
-	npm i -g ocaml-language-server
 	@echo "Updated vim plugins"
 
 
