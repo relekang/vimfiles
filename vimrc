@@ -6,7 +6,6 @@ endif
 
 Plug 'NLKNguyen/papercolor-theme'
 
-Plug 'VundleVim/Vundle.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -24,8 +23,12 @@ if !has('nvim')
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-completion-manager'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'ncm2/ncm2'
+Plug 'ncm2/nvim-typescript', {'do': './install.sh'}
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -127,6 +130,7 @@ let g:ale_linters = {
 \   'javascript': ['eslint', 'flow'],
 \}
 let g:ale_fixers = {
+\   'typescript': ['eslint'],
 \   'javascript': ['eslint'],
 \   'reason': ['refmt'],
 \}
