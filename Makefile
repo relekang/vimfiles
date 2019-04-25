@@ -24,7 +24,7 @@ vim_plugins:
 
 
 clean:
-	@rm -f $(HOME)/.vimrc $(HOME)/.vim $(HOME)/.config/nvim
+	@rm -fr $(HOME)/.vimrc $(HOME)/.vim $(HOME)/.config/nvim
 	@echo "Removed all dotfiles"
 
 .PHONY: vim vim_plugins clean

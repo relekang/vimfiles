@@ -25,7 +25,6 @@ endif
 
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'ncm2/ncm2'
-Plug 'ncm2/nvim-typescript', {'do': './install.sh'}
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -38,7 +37,7 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 
 Plug 'plasticboy/vim-markdown'
-Plug 'reasonml/vim-reason'
+Plug 'reasonml-editor/vim-reason-plus'
 
 call plug#end()
 
@@ -115,13 +114,21 @@ let g:jsx_ext_required = 0
 let g:ackprg = 'ag --vimgrep --smart-case'
 
 let g:LanguageClient_autoStart = 1
+
+
+"\ 'reason': ['/Users/rolf/.local/bin/reason-language-server.exe'],
+"\ 'reason': ['ocaml-language-server', '--stdio'],
+
 let g:LanguageClient_serverCommands = {
-    \ 'reason': ['ocaml-language-server', '--stdio'],
+    \ 'reason': ['/Users/rolf/.local/bin/reason-language-server.exe'],
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
     \ 'python': ['pyls'],
     \ }
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+
+nnoremap <silent> <cr> :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> td :call LanguageClient_textDocument_typeDefinition()<CR>
+nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<cr>
 
 let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
