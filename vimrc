@@ -123,6 +123,7 @@ let g:LanguageClient_serverCommands = {
     \ 'reason': ['/Users/rolf/.local/bin/reason-language-server.exe'],
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
     \ 'python': ['pyls'],
+    \ 'typescript': ['typescript-language-server', '--stdio'],
     \ }
 
 nnoremap <silent> <cr> :call LanguageClient_textDocument_hover()<CR>
