@@ -126,11 +126,19 @@ let g:LanguageClient_serverCommands = {
     \ 'typescript': ['typescript-language-server', '--stdio'],
     \ }
 
-nnoremap <silent> <cr> :call LanguageClient_textDocument_hover()<CR>
+fun PreviewWindowOpened()
+    for nr in range(1, winnr('$'))
+        if getwinvar(nr, "&pvw") == 1
+            return 1
+        endif
+    endfor
+    return 0
+endfun
+
+nnoremap <silent> <expr> <CR> PreviewWindowOpened() ? ':pclose<CR>' : LanguageClient_textDocument_hover()
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> td :call LanguageClient_textDocument_typeDefinition()<CR>
 nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<cr>
-nnoremap <silent> <CR><CR> :pc<cr>
 
 let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
