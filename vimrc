@@ -39,6 +39,8 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'plasticboy/vim-markdown'
 Plug 'reasonml-editor/vim-reason-plus'
 
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+
 call plug#end()
 
 
@@ -124,6 +126,7 @@ let g:LanguageClient_serverCommands = {
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
     \ 'python': ['pyls'],
     \ 'typescript': ['typescript-language-server', '--stdio'],
+    \ 'go': ['go-langserver'],
     \ }
 
 fun PreviewWindowOpened()

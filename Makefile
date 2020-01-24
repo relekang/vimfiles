@@ -18,6 +18,7 @@ $(HOME)/.config/nvim: $(HOME)/.config
 vim_plugins:
 	pip3 install neovim typing python-language-server
 	npm i -g ocaml-language-server neovim typescript-language-server
+	go get -u github.com/sourcegraph/go-langserver
 	@vim +PlugInstall +qa
 	@nvim +PlugInstall +qa
 	@echo "Updated vim plugins"
