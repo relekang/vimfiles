@@ -89,11 +89,29 @@ autocmd filetype make setlocal noexpandtab
 
 colorscheme PaperColor
 
-if $VIM_BACKGROUND == "light"
-  set background=light
-else
-  set background=dark
-endif
+function! SetBackgroundMode(...)
+    let s:new_bg = "dark"
+    if $TERM_PROGRAM ==? "iTerm.app"
+        let s:mode = systemlist("color_mode")[0]
+        if s:mode ==? "light"
+            let s:new_bg = "light"
+        else
+            let s:new_bg = "dark"
+        endif
+    else
+        if $VIM_BACKGROUND ==? "light"
+            let s:new_bg = "light"
+        else
+            let s:new_bg = "dark"
+        endif
+    endif
+    if &background !=? s:new_bg
+        let &background = s:new_bg
+    endif
+endfunction
+
+call SetBackgroundMode()
+call timer_start(1000, "SetBackgroundMode", {"repeat": -1})
 
 " NERDTree
 map + <plug>NERDTreeTabsToggle<CR>
