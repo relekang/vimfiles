@@ -111,7 +111,7 @@ function! SetBackgroundMode(...)
 endfunction
 
 call SetBackgroundMode()
-call timer_start(1000, "SetBackgroundMode", {"repeat": -1})
+"call timer_start(1000, "SetBackgroundMode", {"repeat": -1})
 
 " NERDTree
 map + <plug>NERDTreeTabsToggle<CR>
