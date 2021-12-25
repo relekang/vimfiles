@@ -30,7 +30,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
+    \ 'do': 'bash build.sh',
     \ }
 Plug 'wokalski/autocomplete-flow'
 Plug 'Shougo/neosnippet'
