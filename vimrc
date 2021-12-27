@@ -40,6 +40,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'reasonml-editor/vim-reason-plus'
 
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'cespare/vim-toml', { 'branch': 'main' }
 
 call plug#end()
 
