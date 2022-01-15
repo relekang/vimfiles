@@ -93,11 +93,13 @@ colorscheme PaperColor
 function! SetBackgroundMode(...)
     let s:new_bg = "dark"
     if $TERM_PROGRAM ==? "iTerm.app"
-        let s:mode = systemlist("color_mode")[0]
-        if s:mode ==? "light"
-            let s:new_bg = "light"
-        else
-            let s:new_bg = "dark"
+        let s:mode = systemlist("color_mode")
+        if len(s:mode) > 0
+          if s:mode[0] ==? "light"
+              let s:new_bg = "light"
+          else
+              let s:new_bg = "dark"
+          endif
         endif
     else
         if $VIM_BACKGROUND ==? "light"
