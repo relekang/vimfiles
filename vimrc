@@ -93,7 +93,7 @@ colorscheme PaperColor
 function! SetBackgroundMode(...)
     let s:new_bg = "dark"
     if $TERM_PROGRAM ==? "iTerm.app"
-        let s:mode = systemlist("color_mode")
+        let s:mode = systemlist("color-mode")
         if len(s:mode) > 0
           if s:mode[0] ==? "light"
               let s:new_bg = "light"
@@ -114,7 +114,8 @@ function! SetBackgroundMode(...)
 endfunction
 
 call SetBackgroundMode()
-"call timer_start(1000, "SetBackgroundMode", {"repeat": -1})
+nnoremap cc :call SetBackgroundMode()<cr>
+" call timer_start(1000, "SetBackgroundMode", {"repeat": -1})
 
 " NERDTree
 map + <plug>NERDTreeTabsToggle<CR>
