@@ -16,7 +16,8 @@ $(HOME)/.config/nvim: $(HOME)/.config
 	@echo "Created symbolic link for nvim"
 
 vim_plugins:
-	pip3 install neovim typing python-language-server
+	pip3 install pynvim neovim typing python-language-server
+	/opt/homebrew/opt/python@3.10/bin/python3.10 -m pip install pynvim neovim typing python-language-server
 	npm i -g ocaml-language-server neovim typescript-language-server
 	go install github.com/sourcegraph/go-langserver@latest
 	@vim +PlugInstall +qa

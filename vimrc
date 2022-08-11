@@ -4,6 +4,8 @@ else
   call plug#begin('~/.vim-plugins')
 endif
 
+let g:python3_host_prog = '/opt/homebrew/bin/python3'
+
 Plug 'NLKNguyen/papercolor-theme'
 
 Plug 'ctrlpvim/ctrlp.vim'
@@ -18,19 +20,21 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'sbdchd/neoformat'
 
-if !has('nvim')
-  Plug 'roxma/nvim-yarp'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'roxma/nvim-yarp', { 'do': 'pip3 install -r requirements.txt' }
   Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'Shougo/deoplete.nvim'
 endif
 
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'ncm2/ncm2'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
-    \ 'do': 'bash build.sh',
+    \ 'do': 'bash install.sh',
     \ }
 Plug 'wokalski/autocomplete-flow'
 Plug 'Shougo/neosnippet'
