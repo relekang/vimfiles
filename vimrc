@@ -152,7 +152,7 @@ let g:LanguageClient_serverCommands = {
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
     \ 'python': ['pyls'],
     \ 'typescript': ['typescript-language-server', '--stdio'],
-    \ 'go': ['go-langserver'],
+    \ 'go': ['gopls'],
     \ }
 
 fun PreviewWindowOpened()
