@@ -57,6 +57,8 @@ require('lazy').setup({
 
   'editorconfig/editorconfig-vim',
 
+  'github/copilot.vim',
+
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
 
@@ -350,6 +352,9 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
+vim.g.copilot_no_tab_map = true
+vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+
 -- Turn on lsp status information
 require('fidget').setup()
 
@@ -395,6 +400,8 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
