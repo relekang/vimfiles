@@ -55,6 +55,7 @@ require('lazy').setup({
   'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
+  'christoomey/vim-tmux-navigator',
   'editorconfig/editorconfig-vim',
 
   'github/copilot.vim',
