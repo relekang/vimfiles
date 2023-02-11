@@ -66,6 +66,15 @@ require('lazy').setup({
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1 },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  }
 })
 
 -- [[ Setting options ]]
@@ -359,6 +368,7 @@ mason_lspconfig.setup_handlers {
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
+vim.keymap.set('n', '+', function() require('neo-tree').show('', true) end, {})
 -- Turn on lsp status information
 require('fidget').setup()
 
