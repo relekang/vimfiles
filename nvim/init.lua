@@ -416,7 +416,29 @@ cmp.setup {
   },
 }
 
+function update_color_mode()
+  if os.getenv("SSH_CLIENT") then
+    if os.getenv("COLOR_MODE") == "dark" then
+      vim.cmd [[colorscheme github_dark]]
+    else
+      vim.cmd [[colorscheme github_light]]
+    end
+  else
+    local handle = io.popen("color-mode", "r")
+    local mode = assert(handle):read("*a")
+    assert(handle):close()
 
+    if mode:gsub("%s+", "") == "dark" then
+      vim.cmd [[colorscheme github_dark]]
+    else
+      vim.cmd [[colorscheme github_light]]
+    end
+  end
+end
+
+update_color_mode()
+
+vim.keymap.set('n', '<leader>cm', update_color_mode, { desc = 'Update colorscheme based on color-mode' })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
