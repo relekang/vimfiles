@@ -49,8 +49,8 @@ require('lazy').setup({
   'tpope/vim-rhubarb',
   'lewis6991/gitsigns.nvim',
 
-  'navarasu/onedark.nvim', -- Theme inspired by Atom
   'projekt0n/github-nvim-theme',
+  'NLKNguyen/papercolor-theme',
   'nvim-lualine/lualine.nvim', -- Fancier statusline
   'lukas-reineke/indent-blankline.nvim', -- Add indentation guides even on blank lines
   'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
@@ -421,7 +421,8 @@ function update_color_mode()
     if os.getenv("COLOR_MODE") == "dark" then
       vim.cmd [[colorscheme github_dark]]
     else
-      vim.cmd [[colorscheme github_light]]
+      vim.cmd [[colorscheme papercolor]]
+      vim.cmd [[set background = "light"]]
     end
   else
     local handle = io.popen("color-mode", "r")
@@ -431,7 +432,8 @@ function update_color_mode()
     if mode:gsub("%s+", "") == "dark" then
       vim.cmd [[colorscheme github_dark]]
     else
-      vim.cmd [[colorscheme github_light]]
+      vim.cmd [[colorscheme papercolor]]
+      vim.cmd [[set background = "light"]]
     end
   end
 end
