@@ -59,6 +59,7 @@ require('lazy').setup({
   'christoomey/vim-tmux-navigator',
   'editorconfig/editorconfig-vim',
   'jose-elias-alvarez/null-ls.nvim',
+  'windwp/nvim-spectre',
 
   'github/copilot.vim',
 
@@ -470,5 +471,7 @@ null_ls.setup({
     end
   end,
 })
+
+require('spectre').setup()
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
