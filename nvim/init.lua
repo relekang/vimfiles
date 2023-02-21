@@ -61,13 +61,25 @@ require('lazy').setup({
   'jose-elias-alvarez/null-ls.nvim',
   'windwp/nvim-spectre',
 
+  {
+
+    "https://git.sr.ht/~nedia/auto-save.nvim",
+    event = "BufWinEnter",
+    config = function()
+      require("auto-save").setup {
+        events = { "BufLeave" },
+        exclude_ft = { "neo-tree" },
+      }
+    end,
+  },
+
   'github/copilot.vim',
 
   -- Fuzzy Finder (files, lsp, etc)
-  { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 'nvim-telescope/telescope.nvim',            branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1 },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make',   cond = vim.fn.executable 'make' == 1 },
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
