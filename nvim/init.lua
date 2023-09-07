@@ -73,15 +73,7 @@ require('lazy').setup({
     end,
   },
 
-  'github/copilot.vim',
-  {
-    "folke/which-key.nvim",
-      config = function()
-        vim.o.timeout = true
-        vim.o.timeoutlen = 500
-        require("which-key").setup({})
-      end
-  },
+  'zbirenbaum/copilot.lua',
 
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim',            branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
@@ -349,7 +341,7 @@ end
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  -- pyright = {},
+  pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
 
@@ -388,10 +380,8 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
-vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap("i", "<C-m>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
-vim.keymap.set('n', '+', function() require('neo-tree').show('', true) end, {})
+vim.keymap.set('n', '+', function() require('neo-tree').reveal_current_file('', true) end, {})
 
 vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
 
@@ -490,6 +480,21 @@ null_ls.setup({
   end,
 })
 
+vim.keymap.set('n', ';;', ':w<Cr>')
+vim.keymap.set('n', 'øø', ':w<Cr>')
+
 require('spectre').setup()
+
+
+require('copilot').setup({
+    suggestion = {
+      enabled = true,
+      auto_trigger = true,
+      keymap = {
+        accept = "<C-g>",
+      }
+    }
+})
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
