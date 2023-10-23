@@ -498,6 +498,7 @@ vim.keymap.set('n', ';;', ':w<Cr>')
 vim.keymap.set('n', 'øø', ':w<Cr>')
 
 vim.opt.clipboard = 'unnamedplus'
+vim.cmd[[command! W write]]
 
 require('spectre').setup()
 
