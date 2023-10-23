@@ -397,7 +397,7 @@ mason_lspconfig.setup_handlers {
 vim.keymap.set('n', '=', function() require('neo-tree').reveal_current_file('', true) end, {})
 vim.keymap.set('n', '+', function() require('neo-tree').reveal_current_file('', true) end, {})
 
-vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
+-- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
 
 -- Turn on lsp status information
 require('fidget').setup()
