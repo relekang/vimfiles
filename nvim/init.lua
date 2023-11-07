@@ -295,11 +295,23 @@ require('nvim-treesitter.configs').setup {
 }
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>p', vim.diagnostic.goto_prev)
-vim.keymap.set('n', '<leader>n', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<leader>p', function()
+  vim.diagnostic.goto_next { severity = vim.diagnostic.severity.ERROR }
+end)
+vim.keymap.set('n', '<leader>n', function()
+  vim.diagnostic.goto_next { severity = vim.diagnostic.severity.ERROR }
+end)
+vim.keymap.set('n', '<leader>pp', function()
+  vim.diagnostic.goto_next { severity = vim.diagnostic.severity.WARN }
+end)
+vim.keymap.set('n', '<leader>nn', function()
+  vim.diagnostic.goto_next { severity = vim.diagnostic.severity.WARN }
+end)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 vim.keymap.set('n', '<leader>dd', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>de', '<cmd>Telescope diagnostics severity=error<CR>', { noremap = true, silent = true })
+
 
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
