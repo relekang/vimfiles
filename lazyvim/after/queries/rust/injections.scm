@@ -8,7 +8,7 @@
   (token_tree (string_literal) @injection.content
     (#offset! @injection.content 0 1 0 -1)
     (#set! injection.language "sql") 
-    (#set! injeciton.include-children true)
+    (#set! injection.include-children true)
   )
 )
 
@@ -19,6 +19,6 @@
   (token_tree (string_literal) @injection.content
     (#offset! @injection.content 0 1 0 -1)
     (#set! injection.language "sql") 
-    (#set! injeciton.include-children true)
+    (#set! injection.include-children true)
   )
 )
