@@ -4,7 +4,11 @@ return {
   build = ":Copilot auth",
   event = "InsertEnter",
   config = function()
-    require("copilot").setup({})
+    require("copilot").setup({
+      filetypes = {
+        ["*"] = false,
+      },
+    })
   end,
   opts = {
     suggestion = {
