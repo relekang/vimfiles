@@ -12,6 +12,23 @@ return {
       -- during startup.
       require("lazy.core.loader").add_to_rtp(plugin)
       require("nvim-treesitter.query_predicates")
+
+      local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+      parser_config.dbt = {
+        install_info = {
+          url = "https://github.com/dbt-labs/tree-sitter-jinja2.git",
+          files = { "src/parser.c" },
+          branch = "main",
+          requires_generate_from_grammar = false,
+        },
+        filetype = "sql.jinja",
+      }
+
+      -- Automatically apply the htmldjango filetype for Jinja2 files
+      vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+        pattern = { "*.j2" },
+        command = "set filetype=htmldjango",
+      })
     end,
     dependencies = {
       {
