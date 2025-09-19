@@ -52,3 +52,24 @@ vim.keymap.set("n", "<leader>bm", "<cmd>Telescope buffers<CR>", {
   desc = "Find buffer",
 })
 
+-- ruff lint autofix
+vim.keymap.set("n", "<leader>rf", function()
+  local bufnr = vim.api.nvim_get_current_buf()
+
+  -- Check if it's a Python file
+  if vim.bo.filetype ~= "python" then
+    vim.notify("Ruff autofix is only available for Python files", vim.log.levels.WARN)
+    return
+  end
+
+  vim.lsp.buf.code_action({
+    context = {
+      only = {
+        "source.fixAll.ruff"
+      },
+    },
+    apply = true,
+  })
+
+  vim.notify("Applied ruff autofixes", vim.log.levels.INFO)
+end, { desc = "Run ruff autofix on current file" })
