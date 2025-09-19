@@ -5,8 +5,12 @@ $(HOME)/.config:
 	mkdir $(HOME)/.config
 
 $(HOME)/.config/nvim: $(HOME)/.config
-	@ln -s $(shell pwd)/nvim $(HOME)/.config/nvim
+	@ln -s $(shell pwd)/lazyvim $(HOME)/.config/nvim
 	@echo "Created symbolic link for nvim"
+
+$(HOME)/.config/custom: $(HOME)/.config
+	@ln -s $(shell pwd)/nvim $(HOME)/.config/custom
+	@echo "Created symbolic link for custom"
 
 $(HOME)/.config/lazyvim: $(HOME)/.config
 	@ln -s $(shell pwd)/lazyvim $(HOME)/.config/lazyvim
