@@ -1,3 +1,3 @@
 return {
-  "windwp/nvim-spectre",
+  "nvim-pack/nvim-spectre",
 }
