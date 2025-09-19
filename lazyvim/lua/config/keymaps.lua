@@ -41,3 +41,14 @@ vim.keymap.set("n", "<leader>n", "<leader>xn", { remap = true, desc = "Go to nex
 -- neo-tree
 vim.keymap.set("n", "=", "<leader>fe", { remap = true })
 vim.keymap.set("n", "+", "<leader>fe", { remap = true })
+
+-- symbol search
+--vim.keymap.del("n", "<leader>ss")
+--vim.keymap.del("n", "<leader>sS")
+--vim.keymap.set("n", "<leader>ss", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", { desc = "Workspace Symbols" })
+--vim.keymap.set("n", "<leader>sS", "<cmd>Telescope lsp_document_symbols<CR>", { desc = "Document Symbols" })
+
+vim.keymap.set("n", "<leader>bm", "<cmd>Telescope buffers<CR>", {
+  desc = "Find buffer",
+})
+
