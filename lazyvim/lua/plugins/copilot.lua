@@ -1,33 +1,43 @@
 return {
-  "zbirenbaum/copilot.lua",
-  cmd = "Copilot",
-  build = ":Copilot auth",
-  event = "InsertEnter",
-  config = function()
-    require("copilot").setup({
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        filetypes = {},
+      })
+    end,
+    opts = {
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        keymap = {
+          accept = "<C-g>",
+        },
+      },
+      panel = {
+        enabled = true,
+        keymap = {
+          open = "<C-p>",
+        },
+      },
       filetypes = {
-        ["*"] = false,
-      },
-    })
-  end,
-  opts = {
-    suggestion = {
-      enabled = true,
-      auto_trigger = true,
-      keymap = {
-        accept = "<C-g>",
+        gitcommit = true,
+        markdown = false,
+        help = false,
       },
     },
-    panel = {
-      enabled = true,
-      keymap = {
-        open = "<C-p>",
-      },
+  },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim", branch = "master" },
     },
-    filetypes = {
-      gitcommit = true,
-      markdown = false,
-      help = false,
+    build = "make tiktoken",
+    opts = {
+      -- See Configuration section for options
     },
   },
 }
