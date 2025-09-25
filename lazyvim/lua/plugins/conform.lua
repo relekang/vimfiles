@@ -7,6 +7,7 @@ return {
         html = { "prettier" },
         yaml = { "prettier" },
         markdown = { "prettier" },
+        python = { "ruff_format", "ruff_organize_imports" },
       },
       formatters = {
         prettier = {
