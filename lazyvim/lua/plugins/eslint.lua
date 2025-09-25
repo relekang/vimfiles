@@ -19,7 +19,7 @@ return {
       setup = {
         eslint = function()
           local function get_client(buf)
-            return require("lazyvim.util").lsp.get_clients({ name = "eslint", bufnr = buf })[1]
+            return vim.lsp.get_clients({ name = "eslint", bufnr = buf })[1]
           end
 
           local formatter = require("lazyvim.util").lsp.formatter({
