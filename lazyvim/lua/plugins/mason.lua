@@ -11,6 +11,7 @@ return {
         "ruff",
         "rust-analyzer",
         "typescript-language-server",
+        "ty",
       },
     },
   },
