@@ -20,6 +20,7 @@ return {
         "query",
         "regex",
         "rust",
+        "svelte",
         "sql",
         "toml",
         "tsx",
